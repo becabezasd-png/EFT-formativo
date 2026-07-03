@@ -1,4 +1,4 @@
-#EFT formativo
+#EFT formativo dia cviernes
 
 asignaturas = {
     'DSY1103': ['Fullstack', 'L4', 7, 42, 12],
