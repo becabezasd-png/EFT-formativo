@@ -27,6 +27,20 @@ def totalAsignaturas():
 
     cantidad_asignaturas = len(asignaturas)
     print(f"Total asignaturas: {cantidad_asignaturas}")
+    return cantidad_asignaturas
+
+def asignaturasPorSala(sala):
+    iniciaFuncion("Asignaturas por sala")
+
+    sala_asignaturas = []
+    
+    for datos in asignaturas.values():
+        if datos[1] == sala:
+            sala_asignaturas.append(datos[0])
+    
+    print(sala_asignaturas)
+    return sala_asignaturas
 
 
-totalAlumnos('DSY1103')
+
+asignaturasPorSala('L3')
