@@ -54,9 +54,13 @@ def asignaturasOnline():
 
 def asignaturasPorHoras(minimo, maximo):
     iniciaFuncion("Asignaturas por hora")
-            
-            
 
+    asignaturas_por_hora = []
 
+    for datos in asignaturas.values():
+        if datos[2] > minimo and (datos[2] < maximo):
+            asignaturas_por_hora.append(datos[0])
+    print(f"Asignaturas por hora: {asignaturas_por_hora}")
+    return asignaturas_por_hora
 
-asignaturasOnline()
+asignaturasPorHoras(1, 5)
