@@ -91,8 +91,28 @@ def validacionAsignaturas(codigo, horario):
     return False
     
 
-validacionAsignaturas("DSY1103", "diurno")
+def verificaExistencia(codigo):
+    iniciaFuncion("Verificacion de existencia de asignatura")
+
+    if codigo not in asignaturas:
+        return False
+    return True
+
+def obtenerCodigo(nombre):
+    iniciaFuncion("Obetener codigo de asignatura")
+
+    for codigo, datos in asignaturas.items():
+        if datos[0] == nombre:
+            return codigo
+    return False
+
+def conEspacios():
+    iniciaFuncion("Asignaturas con espacios en su nombre")
+
+    for datos in asignaturas.values():
+        if " " in datos[0]:
+            print(datos[0])
 
 
-
+conEspacios()
 
