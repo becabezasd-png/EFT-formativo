@@ -63,4 +63,36 @@ def asignaturasPorHoras(minimo, maximo):
     print(f"Asignaturas por hora: {asignaturas_por_hora}")
     return asignaturas_por_hora
 
-asignaturasPorHoras(1, 5)
+def validacionCodigo(codigo):
+    iniciaFuncion("Validacion de codigo")
+
+    if codigo not in asignaturas:
+        return False
+    if len(codigo) != 7:
+        return False
+    primeros_tres = codigo[:3]
+    ultimos_cuatro = codigo[-4:]
+    if primeros_tres.isalpha() and (ultimos_cuatro.isdigit()):
+        return True
+    else:
+        return False
+
+
+def validacionAsignaturas(codigo, horario):
+    iniciaFuncion("Validacion de asignatura")
+
+    if codigo in asignaturas:
+        datos = asignaturas[codigo]
+
+        if horario == "diurno" and datos[3] > 15:
+            return True
+        elif horario == "vespertino" and datos[4] > 15:
+            return True
+    return False
+    
+
+validacionAsignaturas("DSY1103", "diurno")
+
+
+
+
