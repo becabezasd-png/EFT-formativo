@@ -10,7 +10,7 @@ asignaturas = {
 }
 
 def iniciaFuncion(nombre):
-    print(f"Inicia la funcion {nombre}")
+    print(f"Inicia la funcion: {nombre}")
 
 
 def totalAlumnos(codigo):
@@ -73,6 +73,7 @@ def validacionCodigo(codigo):
     primeros_tres = codigo[:3]
     ultimos_cuatro = codigo[-4:]
     if primeros_tres.isalpha() and (ultimos_cuatro.isdigit()):
+        print("Correcto")
         return True
     else:
         return False
@@ -114,5 +115,5 @@ def conEspacios():
             print(datos[0])
 
 
-conEspacios()
+validacionCodigo('DSY1103')
 
